@@ -1,0 +1,1243 @@
+/* ============================================================
+   UNDANGAN06 – style.css
+   Base + Loading + Cover
+   ============================================================ */
+
+/* --- VARIABLES --- */
+:root {
+  --cream: #F2EADE;
+  --burgundy: #5D0505;
+  --burg-dark: #3a0303;
+  --gold: #D7BB83;
+  --gold2: #b99152;
+  --font-script: 'wedding-signatur', 'Great Vibes', cursive;
+  --font-brush: 'wedding-marthissa', 'Great Vibes', cursive;
+  --font-display: 'Cormorant Infant', serif;
+  --font-ui: 'Poppins', sans-serif;
+}
+
+/* --- RESET --- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-ui);
+  background: #100202;
+  overflow-x: hidden;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background: none;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* Center column max 480px */
+.loading-screen,
+.cover-section,
+.main-content {
+  max-width: 480px;
+  margin: 0 auto;
+  position: relative;
+}
+
+/* ============================================================
+   LOADING SCREEN
+   ============================================================ */
+.loading-screen {
+  position: fixed;
+  inset: 0;
+  background: var(--burg-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  transition: opacity 0.6s ease, visibility 0.6s ease;
+}
+
+.loading-screen.done {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.loading-logo {
+  width: 72px;
+  margin: 0 auto 22px;
+  filter: brightness(0) invert(1);
+  animation: pulse 2s ease infinite;
+}
+
+.loading-spinner {
+  width: 38px;
+  height: 38px;
+  border: 3px solid rgba(215, 187, 131, 0.2);
+  border-top-color: var(--gold);
+  border-radius: 50%;
+  margin: 0 auto;
+  animation: spin 0.85s linear infinite;
+}
+
+/* ============================================================
+   COVER SECTION
+   ============================================================ */
+.cover-section {
+  position: fixed;
+  /* span full viewport height, centered column */
+  top: 0;
+  left: 50%;
+  right: auto;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 100dvh;
+  z-index: 1000;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  transition: transform 0.9s cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 0.9s ease;
+}
+
+.cover-section.slide-away {
+  transform: translateX(-50%) translateY(-100%);
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Background photo */
+.cover-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center top;
+}
+
+/* Dark gradient bottom */
+.cover-gradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom,
+      rgba(30, 0, 0, 0) 25%,
+      rgba(60, 0, 0, 0.55) 55%,
+      rgba(5, 0, 0, 0.95) 100%);
+}
+
+/* Text content */
+.cover-content {
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  text-align: center;
+  padding: 0 28px 52px;
+  animation: fadeUp 1s ease 0.3s both;
+}
+
+.cover-wedding-of {
+  font-family: var(--font-display);
+  font-size: 14px;
+  font-style: italic;
+  letter-spacing: 3px;
+  color: rgba(255, 255, 255, 0.82);
+  margin-bottom: 4px;
+}
+
+.cover-names {
+  font-family: var(--font-script);
+  font-size: 68px;
+  line-height: 1;
+  color: #fff;
+  text-shadow: 2px 4px 18px rgba(0, 0, 0, 0.55);
+  margin-bottom: 26px;
+  animation: fadeUp 1s ease 0.5s both;
+}
+
+.cover-to-box {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(215, 187, 131, 0.35);
+  border-radius: 12px;
+  padding: 10px 30px 13px;
+  margin-bottom: 22px;
+  animation: fadeUp 1s ease 0.7s both;
+}
+
+.cover-to-label {
+  font-family: var(--font-ui);
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: rgba(255, 255, 255, 0.6);
+  margin-bottom: 4px;
+  text-transform: uppercase;
+}
+
+.cover-guest-name {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 400;
+  color: #fff;
+  letter-spacing: 0.5px;
+}
+
+.cover-open-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, #D7BB83 0%, #b99152 100%);
+  color: #fff;
+  font-family: var(--font-ui);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 1.2px;
+  padding: 14px 40px;
+  border-radius: 60px;
+  box-shadow: 0 4px 22px rgba(163, 140, 94, 0.5);
+  animation: fadeUp 1s ease 0.9s both;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.cover-open-btn:active {
+  transform: scale(0.97);
+  box-shadow: 0 2px 12px rgba(163, 140, 94, 0.3);
+}
+
+/* ============================================================
+   MAIN CONTENT
+   ============================================================ */
+.main-content {
+  min-height: 100vh;
+  background-image: url('assets/images/bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+/* Floating audio button */
+.fab-audio {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 800;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #D7BB83, #b99152);
+  color: #fff;
+  font-size: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 3px 14px rgba(0, 0, 0, 0.4);
+  transition: transform 0.2s;
+}
+
+.fab-audio:active {
+  transform: scale(0.9);
+}
+
+/* Floating back-to-top */
+.fab-top {
+  position: fixed;
+  bottom: 72px;
+  right: 20px;
+  z-index: 800;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: rgba(50, 50, 50, 0.75);
+  color: #fff;
+  font-size: 17px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.35);
+}
+
+/* ============================================================
+   ANIMATIONS
+   ============================================================ */
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pulse {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.55;
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ============================================================
+   SECTION 1: VIDEO HERO
+   ============================================================ */
+.s1-video {
+  position: relative;
+  width: 100%;
+  height: 100dvh;
+  overflow: hidden;
+  background-color: var(--cream);
+}
+
+.s1-video-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: 1;
+  transition: opacity 1s ease;
+}
+
+.s1-logo-watermark {
+  position: absolute;
+  bottom: 45px;
+  right: 10px;
+  width: 110px;
+  z-index: 10;
+  opacity: 0.9;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5));
+}
+
+/* Overlay that appears at 10s */
+.s1-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* hidden by default, shown via class */
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 1s ease, visibility 1s ease;
+}
+
+.s1-overlay.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Decorations */
+.s1-deco-top {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 3;
+}
+
+.s1-deco-bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 3;
+}
+
+.s1-kupu {
+  position: absolute;
+  z-index: 4;
+}
+
+.s1-kupu-left {
+  width: 60px;
+  top: 25%;
+  left: 5%;
+  animation: flutter1 7s ease-in-out infinite;
+}
+
+.s1-kupu-right {
+  width: 50px;
+  top: 35%;
+  right: 5%;
+  animation: flutter2 9s ease-in-out infinite 1.5s;
+}
+
+/* Text block */
+.s1-text-wrap {
+  position: relative;
+  z-index: 5;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: -25vh;
+  /* geser teks ke atas */
+  /* Entrance animation triggers when parent gets .show */
+}
+
+.s1-overlay.show .s1-sub {
+  animation: fadeUp 1s ease 0.2s both;
+}
+
+.s1-overlay.show .s1-name-script {
+  animation: fadeUp 1s ease 0.4s both;
+}
+
+.s1-overlay.show .s1-amp {
+  animation: fadeUp 1s ease 0.6s both;
+}
+
+.s1-overlay.show .s1-date {
+  animation: fadeUp 1s ease 0.8s both;
+}
+
+.s1-overlay.show .s1-scroll-icon {
+  animation: fadeUp 1s ease 1s both;
+}
+
+.s1-sub {
+  font-family: var(--font-display);
+  font-size: 13px;
+  letter-spacing: 3px;
+  color: var(--burgundy);
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.s1-name-script {
+  font-family: var(--font-script);
+  font-size: 65px;
+  line-height: 0.9;
+  color: var(--burgundy);
+  text-shadow: 1px 1px 10px rgba(255, 255, 255, 0.8);
+}
+
+.s1-amp {
+  font-family: var(--font-display);
+  font-size: 26px;
+  color: #333;
+  margin: 5px 0;
+}
+
+.s1-date {
+  font-family: var(--font-display);
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 5px;
+  color: #1a0505;
+  margin-top: 15px;
+}
+
+/* Scroll Icon */
+.s1-scroll-icon {
+  margin-top: 30px;
+  position: relative;
+  width: 24px;
+  height: 40px;
+}
+
+.s1-scroll-ring {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 1px solid #1a0505;
+  border-radius: 12px;
+}
+
+.s1-scroll-dot {
+  position: absolute;
+  top: 6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 4px;
+  background-color: #1a0505;
+  border-radius: 50%;
+  animation: scrollDot 2s ease infinite;
+}
+
+@keyframes scrollDot {
+  0% {
+    transform: translate(-50%, 0);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translate(-50%, 15px);
+    opacity: 0;
+  }
+}
+
+@keyframes flutter1 {
+
+  0%,
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+
+  25% {
+    transform: translate(10px, -10px) rotate(8deg);
+  }
+
+  75% {
+    transform: translate(-8px, 8px) rotate(-6deg);
+  }
+}
+
+@keyframes flutter2 {
+
+  0%,
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+
+  35% {
+    transform: translate(-15px, 12px) rotate(-10deg);
+  }
+
+  70% {
+    transform: translate(10px, -8px) rotate(6deg);
+  }
+}
+
+/* ============================================================
+   SECTION 2: QUOTE & PHOTO
+   ============================================================ */
+.s2-quote {
+  position: relative;
+  width: 100%;
+  min-height: 100dvh;
+  background-image: url('https://albassaminvitation.com/wp-content/uploads/2025/10/Motion-23-Aset-3.jpeg');
+  background-size: 200%;
+  background-position: top center;
+  background-repeat: no-repeat;
+  padding: 60px 24px;
+  margin-top: -1px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.s2-card {
+  position: relative;
+  width: 100%;
+  max-width: 380px;
+  background-color: var(--cream);
+  background-size: cover;
+  background-position: center bottom;
+  border-radius: 20px;
+  border: 2px solid rgba(215, 187, 131, 0.8);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+  z-index: 2;
+  overflow: hidden;
+}
+
+.s2-card-inner {
+  text-align: center;
+  padding-bottom: 30px;
+}
+
+.s2-photo-wrap {
+  width: 100%;
+  overflow: hidden;
+  margin-bottom: 25px;
+}
+
+.s2-photo {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4/5;
+  object-fit: cover;
+  display: block;
+}
+
+.s2-initials {
+  margin-bottom: 20px;
+  color: var(--gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+
+.s2-init {
+  font-family: var(--font-display);
+  font-size: 38px;
+  line-height: 1;
+}
+
+.s2-amp-small {
+  font-family: var(--font-script);
+  font-size: 28px;
+  color: var(--burg-dark);
+  line-height: 1;
+  margin-top: -5px;
+}
+
+.s2-quote-text {
+  font-family: var(--font-display);
+  font-size: 15px;
+  font-style: italic;
+  font-weight: 600;
+  line-height: 1.6;
+  color: var(--burg-dark);
+  margin-bottom: 25px;
+  padding: 0 25px;
+}
+
+.s2-quote-source {
+  font-family: var(--font-ui);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--burg-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+
+.s2-line {
+  height: 1px;
+  width: 30px;
+  background-color: var(--burg-dark);
+}
+
+/* Floating animations (BDT Floating Effect style) */
+@keyframes s2-float-1 {
+
+  0%,
+  100% {
+    transform: translateY(0px) rotate(-1deg);
+  }
+
+  50% {
+    transform: translateY(-12px) rotate(1deg);
+  }
+}
+
+@keyframes s2-float-2 {
+
+  0%,
+  100% {
+    transform: translateY(0px) rotate(1.5deg);
+  }
+
+  50% {
+    transform: translateY(-16px) rotate(-1.5deg);
+  }
+}
+
+@keyframes s2-float-3 {
+
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0.5deg);
+  }
+
+  50% {
+    transform: translateY(-10px) rotate(-0.5deg);
+  }
+}
+
+@keyframes s2-float-4-mirrored {
+
+  0%,
+  100% {
+    transform: scaleX(-1) translateY(0px) rotate(-1deg);
+  }
+
+  50% {
+    transform: scaleX(-1) translateY(-14px) rotate(1deg);
+  }
+}
+
+/* Floral decorations for section 2 */
+.s2-flowers {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.s2-flowers img {
+  position: absolute;
+  bottom: 0;
+  object-fit: contain;
+}
+
+.s2-flower-bl {
+  left: -10px;
+  width: 35%;
+  max-width: 140px;
+  z-index: 4;
+  transform-origin: bottom left;
+  animation: s2-float-1 4s ease-in-out infinite;
+}
+
+.s2-flower-br {
+  right: -10px;
+  width: 35%;
+  max-width: 140px;
+  z-index: 4;
+  transform-origin: bottom right;
+  animation: s2-float-2 5s ease-in-out infinite 0.8s;
+}
+
+.s2-flower-ml {
+  right: -1%;
+  width: 45%;
+  max-width: 200px;
+  bottom: -40px;
+  z-index: 3;
+  transform-origin: bottom center;
+  animation: s2-float-3 6s ease-in-out infinite 0.4s;
+}
+
+.s2-flower-mr {
+  left: -1%;
+  width: 45%;
+  max-width: 200px;
+  bottom: -40px;
+  z-index: 4;
+  transform-origin: bottom center;
+  animation: s2-float-4-mirrored 5.5s ease-in-out infinite 1.2s;
+}
+
+/* ============================================================
+   SECTION 3: COUPLE PROFILE
+   ============================================================ */
+.s3-couple {
+  position: relative;
+  width: 100%;
+  padding: 40px 15px;
+  background: transparent;
+}
+
+.s3-container {
+  position: relative;
+  width: 100%;
+  background-color: rgba(242, 234, 222, 0.85);
+  border: 2px solid var(--gold);
+  border-radius: 200px 200px 200px 200px;
+  padding: 60px 20px;
+  overflow: hidden;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Dekorasi Atas */
+.s3-flower-tl {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 120px;
+  z-index: 2;
+}
+
+.s3-flower-tr {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 120px;
+  transform: scaleX(-1);
+  z-index: 2;
+}
+
+/* Area Judul */
+.s3-title-area {
+  margin-bottom: 40px;
+  margin-top: 20px;
+  position: relative;
+  z-index: 3;
+}
+
+.s3-crown {
+  width: 80px;
+  height: auto;
+  margin: 0 auto 10px;
+  display: block;
+}
+
+.s3-title-script {
+  font-family: var(--font-script);
+  font-size: 42px;
+  color: var(--burg-dark);
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.s3-intro-text {
+  font-family: var(--font-ui);
+  font-size: 11px;
+  line-height: 1.5;
+  color: var(--burg-dark);
+  margin-top: 20px;
+  padding: 0 10px;
+}
+
+/* Profil Umum */
+.s3-profile {
+  position: relative;
+  margin-bottom: 50px;
+  z-index: 3;
+}
+
+/* Photo Wrapper & Frame */
+.s3-photo-wrapper {
+  position: relative;
+  width: 220px;
+  height: 280px;
+  margin: 0 auto 20px;
+}
+
+.s3-photo-frame {
+  position: absolute;
+  top: 15px;
+  left: 20px;
+  width: 180px;
+  height: 250px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid var(--gold);
+  z-index: 2;
+}
+
+.s3-person-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Layering Bunga Pria */
+.s3-flower-bg {
+  position: absolute;
+  bottom: -20px;
+  left: -10px;
+  width: 160px;
+  z-index: 1;
+}
+
+.s3-flower-fg {
+  position: absolute;
+  bottom: -20px;
+  right: -20px;
+  width: 140px;
+  z-index: 3;
+}
+
+.s3-butterfly-groom {
+  position: absolute;
+  top: 90px;
+  left: 20px;
+  width: 280px;
+  z-index: 10;
+  animation: butterfly-float 3s ease-in-out infinite;
+  transform-origin: center center;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+/* Layering Bunga Wanita */
+.s3-flower-bg-bride {
+  position: absolute;
+  bottom: 0;
+  right: -30px;
+  width: 160px;
+  z-index: 1;
+}
+
+.s3-flower-fg-bride {
+  position: absolute;
+  bottom: -10px;
+  left: -20px;
+  width: 150px;
+  z-index: 3;
+}
+
+.s3-butterfly-bride {
+  position: absolute;
+  top: 90px;
+  left: -30px; /* Digeser sedikit ke kanan agar tidak terlalu ke tengah (menutupi kepala mempelai pria) */
+  width: 280px;
+  z-index: 10;
+  animation: butterfly-float 3s ease-in-out infinite;
+  transform-origin: center center;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+/* Animasi naik turun kupu-kupu */
+@keyframes butterfly-float {
+
+  0%,
+  100% {
+    transform: translateY(0px) rotate(-5deg);
+  }
+
+  30% {
+    transform: translateY(-10px) rotate(3deg);
+  }
+
+  60% {
+    transform: translateY(-5px) rotate(-2deg);
+  }
+}
+
+/* Teks Nama & Orang Tua */
+.s3-name {
+  font-family: var(--font-display);
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--burg-dark);
+  margin-bottom: 8px;
+}
+
+.s3-parents {
+  font-family: var(--font-ui);
+  font-size: 11px;
+  color: var(--burg-dark);
+  margin-bottom: 20px;
+  line-height: 1.4;
+}
+
+/* Tombol IG */
+.s3-ig-btn {
+  display: inline-block;
+  background-color: var(--gold2);
+  color: #fff;
+  padding: 6px 15px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* Divider & Variasi */
+.s3-divider {
+  text-align: center;
+  margin: 30px 0;
+}
+
+.s3-amp {
+  font-family: var(--font-display);
+  font-size: 50px;
+  color: var(--burg-dark);
+  font-style: italic;
+}
+
+.s3-name-wrapper {
+  position: relative;
+  display: inline-block;
+  margin-top: 40px;
+}
+
+.s3-nickname {
+  position: absolute;
+  top: -45px;
+  left: 50%;
+  transform: translateX(-50%) rotate(-5deg);
+  font-family: var(--font-script);
+  font-size: 55px;
+  color: var(--burg-dark);
+  white-space: nowrap;
+  z-index: 5;
+  opacity: 0.9;
+}
+
+/* ============================================================
+   SECTION 4: SAVE THE DATE
+   ============================================================ */
+.s4-savethedate {
+  position: relative;
+  width: 100%;
+  background-color: var(--burgundy);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  padding-bottom: 60px;
+}
+
+.s4-image-wrap {
+  position: relative;
+  width: 100%;
+  height: 65vh;
+  background-image: url('https://albassaminvitation.com/wp-content/uploads/2026/01/Rahmi-Arbi-cover.jpeg');
+  background-size: cover;
+  background-position: center top;
+}
+
+.s4-image-gradient {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  background: linear-gradient(to top, var(--burgundy) 0%, transparent 100%);
+}
+
+.s4-content {
+  position: relative;
+  z-index: 5;
+  padding: 0 20px;
+  text-align: center;
+  margin-top: -20px;
+}
+
+.s4-flower-right {
+  position: absolute;
+  right: -50px;
+  top: -160px;
+  width: 220px;
+  z-index: 0;
+  opacity: 0.95;
+  filter: drop-shadow(0 5px 15px rgba(0,0,0,0.3));
+}
+
+.s4-title {
+  font-family: var(--font-script);
+  font-size: 55px;
+  color: #fff;
+  margin-bottom: 30px;
+  position: relative;
+  z-index: 1;
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.4);
+}
+
+.s4-countdown {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 30px;
+  position: relative;
+  z-index: 1;
+}
+
+.s4-cd-box {
+  background-color: var(--gold);
+  border-radius: 12px;
+  width: 65px;
+  height: 75px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  color: #fff;
+}
+
+.s4-cd-num {
+  font-family: var(--font-display);
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 1;
+  margin-bottom: 5px;
+}
+
+.s4-cd-label {
+  font-family: var(--font-ui);
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.s4-intro-text {
+  position: relative;
+  z-index: 1;
+  font-family: var(--font-ui);
+  font-size: 12px;
+  color: #fff;
+  line-height: 1.6;
+  font-weight: 500;
+  padding: 0 10px;
+}
+
+/* ============================================================
+   SECTION 5: EVENT DETAILS
+   ============================================================ */
+.s5-event {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background-image: url('https://albassaminvitation.com/wp-content/uploads/2025/10/Motion-23-Aset-3.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-color: var(--burgundy);
+  background-blend-mode: multiply;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px 60px; /* Reduced bottom padding since flower is gone */
+  overflow: hidden;
+  margin-top: -1px;
+}
+
+.s5-oval-container {
+  position: relative;
+  width: 100%;
+  max-width: 340px;
+  min-height: 85vh; /* Perpanjang background oval */
+  background-image: url('assets/images/bg.jpg');
+  background-size: cover;
+  background-position: center bottom;
+  background-color: rgba(242, 234, 222, 0.85);
+  background-blend-mode: overlay;
+  border: 1.5px solid #D7BB83; /* Garis tepi sesuai gambar */
+  border-radius: 200px 200px 200px 200px;
+  padding: 100px 20px; /* Tambah padding atas bawah agar isi lebih lega/panjang */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  z-index: 2;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+}
+
+.s5-event-content {
+  position: relative;
+  z-index: 5;
+}
+
+.s5-title {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--burg-dark);
+  line-height: 1.3;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+}
+
+.s5-day {
+  display: block;
+  font-family: var(--font-script);
+  font-size: 45px;
+  color: var(--burg-dark);
+  margin-bottom: 10px;
+}
+
+.s5-date {
+  font-family: var(--font-ui);
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--burg-dark);
+  margin-bottom: 5px;
+  letter-spacing: 1px;
+}
+
+.s5-time {
+  font-family: var(--font-ui);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--burg-dark);
+  margin-bottom: 25px;
+}
+
+.s5-pin-icon {
+  font-size: 20px;
+  color: var(--gold);
+  margin-bottom: 15px;
+}
+
+.s5-venue {
+  font-family: var(--font-display);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--burg-dark);
+  margin-bottom: 10px;
+}
+
+.s5-address {
+  font-family: var(--font-ui);
+  font-size: 11px;
+  color: var(--burg-dark);
+  line-height: 1.5;
+  font-weight: 500;
+  margin-bottom: 30px;
+  padding: 0 10px;
+}
+
+.s5-map-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: var(--gold);
+  color: #fff;
+  font-family: var(--font-ui);
+  font-size: 12px;
+  font-weight: 600;
+  padding: 12px 25px;
+  border-radius: 30px;
+  text-decoration: none;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  transition: transform 0.2s, background-color 0.2s;
+}
+
+.s5-map-btn:active {
+  transform: scale(0.95);
+  background-color: var(--gold-dark);
+}
+
+.s5-flower-bottom {
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120%;
+  min-width: 420px;
+  z-index: 5;
+  pointer-events: none;
+}
+
+/* ============================================================
+   DESKTOP BORDER
+   ============================================================ */
+@media (min-width: 481px) {
+
+  .cover-section,
+  .main-content {
+    border-left: 1px solid rgba(255, 255, 255, 0.05);
+    border-right: 1px solid rgba(255, 255, 255, 0.05);
+  }
+}

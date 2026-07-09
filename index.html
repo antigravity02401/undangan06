@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+  <title>The Wedding of Arbi &amp; Rahmi</title>
+  <meta name="description" content="Undangan Pernikahan Arbi &amp; Rahmi - Minggu, 01 Februari 2026">
+  <link rel="icon"
+    href="https://albassaminvitation.com/wp-content/uploads/2025/09/cropped-LOGO-Al-Bassam-Square-Ungu-32x32.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Infant:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Great+Vibes&family=Poppins:wght@300;400;500;600&display=swap"
+    rel="stylesheet">
+  <style>
+    @font-face {
+      font-family: 'wedding-signatur';
+      src: url('https://albassaminvitation.com/wp-content/uploads/useanyfont/8360Wedding-The-Signatur.woff2') format('woff2'),
+        url('https://albassaminvitation.com/wp-content/uploads/useanyfont/8360Wedding-The-Signatur.woff') format('woff');
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: 'wedding-marthissa';
+      src: url('https://albassaminvitation.com/wp-content/uploads/useanyfont/6448Wedding-Marthissa.woff') format('woff');
+      font-display: swap;
+    }
+  </style>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div id="loading-screen" class="loading-screen">
+    <div class="loading-inner">
+      <img src="https://albassaminvitation.com/wp-content/uploads/LOGO-AL-BASSAM-EMBOS-WEB.png" alt="Al Bassam"
+        class="loading-logo">
+      <div class="loading-spinner"></div>
+    </div>
+  </div>
+
+  <div id="cover-section" class="cover-section">
+    <div class="cover-bg"
+      style="background-image:url('https://albassaminvitation.com/wp-content/uploads/2026/01/Rahmi-Arbi-cover.jpeg')">
+    </div>
+    <div class="cover-gradient"></div>
+    <div class="cover-content">
+      <p class="cover-wedding-of">The Wedding of</p>
+      <h1 class="cover-names">Arbi &amp;<br>Rahmi</h1>
+      <div class="cover-to-box">
+        <p class="cover-to-label">Kepada Yth:</p>
+        <p class="cover-guest-name" id="cover-guest">Tamu Undangan</p>
+      </div>
+      <button class="cover-open-btn" id="open-btn" onclick="openInvitation()">
+        ✉ Buka Undangan
+      </button>
+    </div>
+  </div>
+
+  <main id="main-content" class="main-content hidden">
+    <audio id="bg-audio" loop preload="none">
+      <source
+        src="https://www.library.terhubung.id/wp-content/uploads/2026/01/FULL.-Takkan-Taganti-Ovhi-Firsty-Official-Lyrics-Video-Ovhi-Firsty.mp3"
+        type="audio/mpeg">
+    </audio>
+    <button class="fab-audio" id="fab-audio" onclick="toggleAudio()" title="Musik">
+      <span id="audio-note">♪</span>
+    </button>
+    <button class="fab-top hidden" id="fab-top" onclick="scrollToTop()" title="Ke Atas">↑</button>
+
+    <!-- SECTIONS ADDED ONE BY ONE BELOW -->
+
+    <!-- ===================================================
+       SECTION 1: VIDEO HERO
+       =================================================== -->
+    <section class="s1-video" id="s-hero">
+
+
+      <!-- Fullscreen video without loop -->
+      <video class="s1-video-bg" id="hero-video" autoplay muted playsinline preload="auto"
+        poster="https://albassaminvitation.com/wp-content/uploads/2025/10/Motion-23-Aset-2.jpg" style="z-index: 1;">
+        <source src="assets/Video.mp4" type="video/mp4">
+      </video>
+
+      <!-- Logo Watermark -->
+      <img src="assets/logo.png" class="s1-logo-watermark" alt="Logo">
+
+      <!-- Text overlay (hidden, appears at 10s) -->
+      <div class="s1-overlay" id="s1-overlay">
+
+        <!-- Center text block -->
+        <div class="s1-text-wrap">
+          <p class="s1-sub">THE WEDDING OF</p>
+          <span class="s1-name-script">Arbi</span>
+          <span class="s1-amp">&amp;</span>
+          <span class="s1-name-script">Rahmi</span>
+          <p class="s1-date">01 . 02 . 26</p>
+          <div class="s1-scroll-icon">
+            <span class="s1-scroll-ring"></span>
+            <span class="s1-scroll-dot"></span>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ===================================================
+         SECTION 2: QUOTE & PHOTO
+         =================================================== -->
+    <section class="s2-quote" id="s-quote">
+      <div class="s2-card">
+        <div class="s2-card-inner">
+          <div class="s2-photo-wrap">
+            <img src="https://albassaminvitation.com/wp-content/uploads/2026/01/Rahmi-Arbi-cover.jpeg"
+              alt="Rahmi & Arbi" class="s2-photo">
+          </div>
+          <div class="s2-initials">
+            <span class="s2-init">A</span>
+            <span class="s2-amp-small">&amp;</span>
+            <span class="s2-init">R</span>
+          </div>
+          <p class="s2-quote-text">
+            "Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan pasangan-pasangan untukmu dari jenismu
+            sendiri, agar kamu cenderung dan merasa tenteram kepadanya, dan Dia menjadikan di antaramu rasa kasih dan
+            sayang. Sungguh, pada yang demikian itu benar-benar terdapat tanda-tanda (kebesaran Allah) bagi kaum yang
+            berpikir."
+          </p>
+          <div class="s2-quote-source">
+            <span class="s2-line"></span>
+            <span>QS. Ar-Rum : 21</span>
+            <span class="s2-line"></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Dekorasi bunga di bawah section 2 -->
+      <div class="s2-flowers">
+        <!-- Bagian tengah agak ke kiri (dibalik horizontal) -->
+        <img src="https://albassaminvitation.com/wp-content/uploads/2025/10/Motion-23-Aset-1.png" class="s2-flower-mr"
+          alt="">
+        <!-- Kiri Bawah -->
+        <img src="https://albassaminvitation.com/wp-content/uploads/2025/10/MOTION-23-Couple-Depan-2-e1751026418307.png"
+          class="s2-flower-bl" alt="">
+        <!-- Bagian tengah agak ke kanan -->
+        <img src="https://albassaminvitation.com/wp-content/uploads/2025/10/Motion-23-Aset-1.png" class="s2-flower-ml"
+          alt="">
+        <!-- Kanan Bawah -->
+        <img src="https://albassaminvitation.com/wp-content/uploads/2025/10/MOTION-23-Couple-Depan.png"
+          class="s2-flower-br" alt="">
+      </div>
+    </section>
+
+    <!-- ===================================================
+         SECTION 3: COUPLE PROFILE
+         =================================================== -->
+    <section class="s3-couple" id="s-couple">
+      <!-- Latar belakang luar section s3-couple akan menampilkan floral pattern -->
+      <div class="s3-container">
+        <!-- Dekorasi sudut atas -->
+        <div class="s3-title-area">
+          <svg class="s3-crown" viewBox="0 0 100 50" fill="var(--gold)">
+            <path d="M10,40 L90,40 L80,10 L65,30 L50,5 L35,30 L20,10 Z"></path>
+            <path d="M20,43 L80,43 L75,48 L25,48 Z"></path>
+          </svg>
+          <h2 class="s3-title-script">We Are</h2>
+          <h2 class="s3-title-script">Getting Married!</h2>
+          <p class="s3-intro-text">
+            Maha Suci Allah yang telah menciptakan makhluk-Nya berpasang-pasangan. Ya Allah semoga ridho-Mu tercurah
+            mengiringi pernikahan kami:
+          </p>
+        </div>
+
+        <!-- Groom Profile -->
+        <div class="s3-profile">
+          <div class="s3-photo-wrapper">
+            <img src="https://albassaminvitation.com/wp-content/uploads/2025/10/MOTION-23-Couple-Depan.png"
+              class="s3-flower-bg" alt="">
+            <div class="s3-photo-frame">
+              <img src="https://albassaminvitation.com/wp-content/uploads/2026/01/Rahmi-Arbi-cover.jpeg"
+                class="s3-person-photo" alt="Muhammad Arbi">
+            </div>
+            <img src="https://albassaminvitation.com/wp-content/uploads/2025/10/MOTION-23-Couple-Depan.png"
+              class="s3-flower-fg" alt="">
+            <img src="https://albassaminvitation.com/wp-content/uploads/2025/09/tes-kupu22-1.png"
+              class="s3-butterfly-groom" alt="">
+          </div>
+          <div class="s3-name-wrapper">
+            <span class="s3-nickname">Arbi</span>
+            <h3 class="s3-name">Muhammad Arbi</h3>
+          </div>
+          <p class="s3-parents">Putra dari Bapak alm Erwin<br>&amp; Ibu Zuraini</p>
+          <a href="#" class="s3-ig-btn"><i class="fab fa-instagram"></i> @muhammad_arbi06</a>
+        </div>
+
+        <!-- Divider -->
+        <div class="s3-divider">
+          <span class="s3-amp">&amp;</span>
+        </div>
+
+        <!-- Bride Profile -->
+        <div class="s3-profile">
+          <div class="s3-photo-wrapper">
+            <img src="https://albassaminvitation.com/wp-content/uploads/2025/10/MOTION-23-Couple-Belakang.png"
+              class="s3-flower-bg-bride" alt="">
+            <div class="s3-photo-frame">
+              <img src="https://albassaminvitation.com/wp-content/uploads/2026/01/Rahmi-Arbi-cover.jpeg"
+                class="s3-person-photo" alt="Rahmi">
+            </div>
+            <img
+              src="https://albassaminvitation.com/wp-content/uploads/2025/10/MOTION-23-Couple-Depan-2-e1751026418307.png"
+              class="s3-flower-fg-bride" alt="">
+            <img src="https://albassaminvitation.com/wp-content/uploads/2025/09/tes-kupu2-1.png"
+              class="s3-butterfly-bride" alt="">
+          </div>
+          <div class="s3-name-wrapper">
+            <span class="s3-nickname">Ami</span>
+            <h3 class="s3-name">Rahmi, S.Sn</h3>
+          </div>
+          <p class="s3-parents">Putri dari Bapak alm. Sabarudin<br>&amp; Ibu Ema Marlina</p>
+          <a href="#" class="s3-ig-btn"><i class="fab fa-instagram"></i> @pasdawnktfikaa</a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===================================================
+         SECTION 4: SAVE THE DATE
+         =================================================== -->
+    <section class="s4-savethedate" id="s-savethedate">
+      <div class="s4-image-wrap">
+        <div class="s4-image-gradient"></div>
+      </div>
+      
+      <div class="s4-content">
+        
+        <h2 class="s4-title">Save The Date</h2>
+        
+        <div class="s4-countdown" id="s4-countdown">
+          <div class="s4-cd-box">
+            <span class="s4-cd-num" id="cd-days">0</span>
+            <span class="s4-cd-label">Hari</span>
+          </div>
+          <div class="s4-cd-box">
+            <span class="s4-cd-num" id="cd-hours">0</span>
+            <span class="s4-cd-label">Jam</span>
+          </div>
+          <div class="s4-cd-box">
+            <span class="s4-cd-num" id="cd-mins">0</span>
+            <span class="s4-cd-label">Menit</span>
+          </div>
+          <div class="s4-cd-box">
+            <span class="s4-cd-num" id="cd-secs">0</span>
+            <span class="s4-cd-label">Detik</span>
+          </div>
+        </div>
+        
+        <p class="s4-intro-text">
+          Dengan memohon rahmat dan ridho Allah SWT, kami<br>
+          mengundang Bapak/Ibu/Saudara/i, untuk menghadiri acara<br>
+          pernikahan kami:
+        </p>
+      </div>
+    </section>
+
+    <!-- ===================================================
+         SECTION 5: EVENT DETAILS
+         =================================================== -->
+    <section class="s5-event" id="s-event">
+      
+      <div class="s5-oval-container">
+        <div class="s5-event-content">
+          <h2 class="s5-title">AKAD NIKAH<br>&amp; RESEPSI</h2>
+          <span class="s5-day">Minggu</span>
+          <p class="s5-date">01 FEBRUARI 2026</p>
+          <p class="s5-time">09:00 - 14:00 WIB</p>
+          
+          <div class="s5-pin-icon">
+            <i class="fas fa-map-marker-alt"></i>
+          </div>
+          
+          <h3 class="s5-venue">GEDUNG PERTEMUN BPKW</h3>
+          <p class="s5-address">
+            Komplek Bumi Harapan Permai No. 9, Jl.<br>
+            Keramat Jati, RT.2/RW.6, Kec. Kramat Jati,<br>
+            Kota Jakarta Timur, DKI Jakarta 13510
+          </p>
+          
+          <a href="#" class="s5-map-btn">
+            <i class="fas fa-map-marker-alt"></i> Google Map
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="app.js"></script>
+</body>
+
+</html>
