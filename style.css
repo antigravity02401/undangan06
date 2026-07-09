@@ -907,18 +907,24 @@ button {
 }
 
 @keyframes flower-sway {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: rotate(0deg);
   }
+
   50% {
     transform: rotate(4deg);
   }
 }
 
 @keyframes flower-sway-reverse {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: rotate(0deg);
   }
+
   50% {
     transform: rotate(-4deg);
   }
@@ -927,7 +933,8 @@ button {
 .s3-butterfly-bride {
   position: absolute;
   top: 90px;
-  left: -30px; /* Digeser sedikit ke kanan agar tidak terlalu ke tengah (menutupi kepala mempelai pria) */
+  left: -30px;
+  /* Digeser sedikit ke kanan agar tidak terlalu ke tengah (menutupi kepala mempelai pria) */
   width: 280px;
   z-index: 10;
   animation: butterfly-float 3s ease-in-out infinite;
@@ -1058,7 +1065,7 @@ button {
   width: 220px;
   z-index: 0;
   opacity: 0.95;
-  filter: drop-shadow(0 5px 15px rgba(0,0,0,0.3));
+  filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.3));
 }
 
 .s4-title {
@@ -1068,7 +1075,7 @@ button {
   margin-bottom: 30px;
   position: relative;
   z-index: 1;
-  text-shadow: 2px 2px 6px rgba(0,0,0,0.4);
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
 }
 
 .s4-countdown {
@@ -1089,7 +1096,7 @@ button {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
   color: #fff;
 }
 
@@ -1133,7 +1140,8 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 60px 20px 60px; /* Reduced bottom padding since flower is gone */
+  padding: 60px 20px 60px;
+  /* Reduced bottom padding since flower is gone */
   overflow: hidden;
   margin-top: -1px;
 }
@@ -1142,22 +1150,25 @@ button {
   position: relative;
   width: 100%;
   max-width: 340px;
-  min-height: 85vh; /* Perpanjang background oval */
+  min-height: 85vh;
+  /* Perpanjang background oval */
   background-image: url('assets/images/bg.jpg');
   background-size: cover;
   background-position: center bottom;
   background-color: rgba(242, 234, 222, 0.85);
   background-blend-mode: overlay;
-  border: 1.5px solid #D7BB83; /* Garis tepi sesuai gambar */
+  border: 1.5px solid #D7BB83;
+  /* Garis tepi sesuai gambar */
   border-radius: 200px 200px 200px 200px;
-  padding: 100px 20px; /* Tambah padding atas bawah agar isi lebih lega/panjang */
+  padding: 100px 20px;
+  /* Tambah padding atas bawah agar isi lebih lega/panjang */
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
   z-index: 2;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
 }
 
 .s5-event-content {
@@ -1236,7 +1247,7 @@ button {
   padding: 12px 25px;
   border-radius: 30px;
   text-decoration: none;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
   transition: transform 0.2s, background-color 0.2s;
 }
 
@@ -1255,6 +1266,189 @@ button {
   z-index: 5;
   pointer-events: none;
 }
+
+/* ============================================================
+   SECTION 6: GALLERY
+   ============================================================ */
+.s6-gallery {
+  position: relative;
+  width: 100%;
+  background-color: var(--burg-dark);
+  padding: 60px 20px;
+  margin-top: -1px;
+}
+
+.s6-title {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 500;
+  color: #fff;
+  letter-spacing: 2px;
+  margin-bottom: -5px;
+  text-transform: uppercase;
+}
+
+.s6-subtitle {
+  font-family: var(--font-script);
+  font-size: 35px;
+  color: #fff;
+  margin-bottom: 30px;
+  opacity: 0.9;
+}
+
+.s6-grid-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.s6-row-top .s6-img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 12px;
+  display: block;
+}
+
+.s6-row-mid {
+  display: flex;
+  gap: 8px;
+}
+
+.s6-col-left {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+}
+
+.s6-col-left .s6-img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 12px;
+  display: block;
+}
+
+.s6-col-right {
+  flex: 1;
+}
+
+.s6-col-right .s6-img-tall {
+  width: 100%;
+  height: 328px;
+  object-fit: cover;
+  border-radius: 12px;
+  display: block;
+}
+
+.s6-marquee-container {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+  display: flex;
+}
+
+.s6-marquee-track {
+  display: flex;
+  gap: 8px;
+  animation: marquee-scroll 15s linear infinite;
+}
+
+.s6-marquee-track .s6-img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 12px;
+  display: block;
+  flex-shrink: 0;
+}
+
+@keyframes marquee-scroll {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-640px);
+  }
+}
+
+/* ============================================================
+   SECTION 7: QUOTES
+   ============================================================ */
+.s7-quotes {
+  position: relative;
+  width: 100%;
+  padding: 60px 20px;
+  background-color: transparent;
+  background-size: cover;
+  background-position: center;
+}
+
+.s7-card {
+  position: relative;
+  width: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+  background-color: #F8F3E9;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  z-index: 2;
+}
+
+.s7-card-top {
+  position: relative;
+  width: 100%;
+  height: 350px;
+}
+
+.s7-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.s7-fade {
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 182px;
+  background: linear-gradient(to bottom, rgba(248, 243, 233, 0) 0%, rgba(248, 243, 233, 1) 100%);
+}
+
+.s7-card-bottom {
+  position: relative;
+  padding: 0 30px 40px;
+  text-align: center;
+  z-index: 3;
+}
+
+.s7-title-script {
+  font-family: var(--font-script);
+  font-size: 45px;
+  color: var(--gold2);
+  margin-bottom: 25px;
+  margin-top: -30px;
+}
+
+.s7-quote-text {
+  font-family: var(--font-ui);
+  font-size: 13px;
+  color: #111;
+  font-weight: 600;
+  line-height: 1.6;
+  margin-bottom: 25px;
+}
+
+.s7-quote-source {
+  font-family: var(--font-ui);
+  font-size: 11px;
+  color: #111;
+  font-weight: 700;
+}
+
+
 
 /* ============================================================
    DESKTOP BORDER
