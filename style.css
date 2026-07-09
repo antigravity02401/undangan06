@@ -860,6 +860,8 @@ button {
   left: -10px;
   width: 160px;
   z-index: 1;
+  animation: flower-sway 4s ease-in-out infinite;
+  transform-origin: bottom left;
 }
 
 .s3-flower-fg {
@@ -868,6 +870,8 @@ button {
   right: -20px;
   width: 140px;
   z-index: 3;
+  animation: flower-sway-reverse 5s ease-in-out infinite;
+  transform-origin: bottom right;
 }
 
 .s3-butterfly-groom {
@@ -888,6 +892,8 @@ button {
   right: -30px;
   width: 160px;
   z-index: 1;
+  animation: flower-sway 4.5s ease-in-out infinite;
+  transform-origin: bottom right;
 }
 
 .s3-flower-fg-bride {
@@ -896,6 +902,26 @@ button {
   left: -20px;
   width: 150px;
   z-index: 3;
+  animation: flower-sway-reverse 5.5s ease-in-out infinite;
+  transform-origin: bottom left;
+}
+
+@keyframes flower-sway {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(4deg);
+  }
+}
+
+@keyframes flower-sway-reverse {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(-4deg);
+  }
 }
 
 .s3-butterfly-bride {
