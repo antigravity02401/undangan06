@@ -37,6 +37,9 @@ function openInvitation() {
   // Play audio
   const audio = document.getElementById('bg-audio');
   if (audio) {
+    if (audio.currentTime === 0) {
+      audio.currentTime = 36;
+    }
     audio.play()
       .then(() => { audioPlaying = true; updateAudioIcon(); })
       .catch(() => {});
