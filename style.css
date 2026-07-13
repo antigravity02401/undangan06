@@ -1460,6 +1460,93 @@ button {
 
 
 /* ============================================================
+   SECTION 7B: LOVE GIFT
+   ============================================================ */
+.s-gift {
+  position: relative;
+  width: 100%;
+  padding: 60px 20px;
+  background-color: var(--burgundy);
+  display: flex;
+  justify-content: center;
+}
+
+.s-gift-card {
+  position: relative;
+  width: 100%;
+  max-width: 360px;
+  border-radius: 20px;
+  border: 2px solid var(--gold);
+  background-image: url('assets/images/bg.jpg');
+  background-size: cover;
+  background-position: center bottom;
+  background-color: rgba(248, 243, 233, 0.85);
+  background-blend-mode: overlay;
+  padding: 60px 30px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.s-gift-icon {
+  font-size: 50px;
+  color: var(--gold);
+  margin-bottom: 15px;
+}
+
+.s-gift-title {
+  font-family: var(--font-script);
+  font-size: 45px;
+  color: #222;
+  margin-bottom: 25px;
+  margin-top: 0;
+}
+
+.s-gift-text {
+  font-family: var(--font-ui);
+  font-size: 12px;
+  color: #111;
+  font-weight: 600;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.s-gift-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: linear-gradient(to right, #C2A36B, #9E8046);
+  color: #fff;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 30px;
+  font-family: var(--font-ui);
+  font-size: 13px;
+  font-weight: 700;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: transform 0.2s, background-color 0.2s;
+}
+
+.s-gift-btn:active {
+  transform: scale(0.95);
+}
+
+.s-gift-thanks {
+  font-family: var(--font-ui);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #222;
+  margin-top: 50px;
+  text-transform: uppercase;
+}
+
+
+/* ============================================================
    SECTION 8: CLOSING
    ============================================================ */
 .s8-closing {
