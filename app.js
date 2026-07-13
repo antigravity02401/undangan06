@@ -110,3 +110,35 @@ function initVideoOverlay() {
     }
   }
 }
+
+/* --- Countdown Timer (Target: Akad Nikah 26 Juli 2026, 08:00 WIB) --- */
+(function initCountdown() {
+  const target = new Date('2026-07-26T08:00:00+07:00').getTime();
+
+  function update() {
+    const now  = Date.now();
+    const diff = target - now;
+
+    if (diff <= 0) {
+      ['cd-days','cd-hours','cd-mins','cd-secs'].forEach(id => {
+        const el = document.getElementById(id);
+        if (el) el.textContent = '0';
+      });
+      return;
+    }
+
+    const days  = Math.floor(diff / 86400000);
+    const hours = Math.floor((diff % 86400000) / 3600000);
+    const mins  = Math.floor((diff % 3600000)  / 60000);
+    const secs  = Math.floor((diff % 60000)    / 1000);
+
+    const set = (id, val) => { const el = document.getElementById(id); if (el) el.textContent = val; };
+    set('cd-days',  days);
+    set('cd-hours', String(hours).padStart(2,'0'));
+    set('cd-mins',  String(mins).padStart(2,'0'));
+    set('cd-secs',  String(secs).padStart(2,'0'));
+  }
+
+  update();
+  setInterval(update, 1000);
+})();

@@ -1361,6 +1361,17 @@ button {
   background-color: var(--gold-dark);
 }
 
+.s5-divider-line {
+  width: 60%;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--gold), transparent);
+  margin: 28px auto;
+}
+
+.s5-title-second {
+  margin-top: 0;
+}
+
 .s5-flower-bottom {
   position: absolute;
   bottom: -20px;
