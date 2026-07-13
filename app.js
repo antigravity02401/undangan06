@@ -38,7 +38,7 @@ function openInvitation() {
   const audio = document.getElementById('bg-audio');
   if (audio) {
     if (audio.currentTime === 0) {
-      audio.currentTime = 36;
+      audio.currentTime = 37;
     }
     audio.play()
       .then(() => { audioPlaying = true; updateAudioIcon(); })
@@ -114,9 +114,9 @@ function initVideoOverlay() {
   }
 }
 
-/* --- Countdown Timer (Target: Akad Nikah 26 Juli 2026, 08:00 WIB) --- */
+/* --- Countdown Timer (Target: Resepsi 02 Agustus 2026, 10:00 WIB) --- */
 (function initCountdown() {
-  const target = new Date('2026-07-26T08:00:00+07:00').getTime();
+  const target = new Date('2026-08-02T10:00:00+07:00').getTime();
 
   function update() {
     const now  = Date.now();
