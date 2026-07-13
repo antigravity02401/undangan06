@@ -76,7 +76,17 @@ button {
   align-items: center;
   justify-content: center;
   z-index: 9999;
-  transition: opacity 0.6s ease, visibility 0.6s ease;
+  transition: opacity 0.8s ease, visibility 0.8s ease;
+  overflow: hidden;
+}
+
+/* Particle-like radial glow */
+.loading-screen::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 60% 50% at 50% 50%, rgba(215,187,131,0.07) 0%, transparent 70%);
+  pointer-events: none;
 }
 
 .loading-screen.done {
@@ -85,22 +95,92 @@ button {
   pointer-events: none;
 }
 
-.loading-logo {
-  width: 72px;
-  margin: 0 auto 22px;
-  filter: brightness(0) invert(1);
-  animation: pulse 2s ease infinite;
+.loading-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  animation: loadingFadeIn 0.8s ease forwards;
+}
+
+@keyframes loadingFadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* SVG ornament lines */
+.loading-ornament-top,
+.loading-ornament-bottom {
+  width: 180px;
+  opacity: 0.9;
+}
+.loading-ornament-top  { margin-bottom: 18px; }
+.loading-ornament-bottom { margin-top: 18px; }
+
+/* Brand block */
+.loading-brand {
+  text-align: center;
+}
+
+.loading-brand-sub {
+  font-family: 'Cormorant Infant', serif;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  color: rgba(215, 187, 131, 0.65);
+  margin: 0 0 10px;
+  text-transform: uppercase;
+}
+
+.loading-brand-name {
+  font-family: 'Great Vibes', cursive;
+  font-size: 52px;
+  font-weight: 400;
+  color: var(--gold);
+  margin: 0 0 6px;
+  line-height: 1.1;
+  text-shadow: 0 0 40px rgba(215,187,131,0.25);
+  animation: namePulse 3s ease-in-out infinite;
+}
+
+@keyframes namePulse {
+  0%, 100% { text-shadow: 0 0 30px rgba(215,187,131,0.2); }
+  50%       { text-shadow: 0 0 50px rgba(215,187,131,0.5); }
+}
+
+.loading-brand-date {
+  font-family: 'Cormorant Infant', serif;
+  font-size: 13px;
+  letter-spacing: 0.22em;
+  color: rgba(215, 187, 131, 0.7);
+  margin: 0;
+}
+
+/* Spinner */
+.loading-spinner-wrap {
+  margin-top: 28px;
 }
 
 .loading-spinner {
-  width: 38px;
-  height: 38px;
-  border: 3px solid rgba(215, 187, 131, 0.2);
+  width: 34px;
+  height: 34px;
+  border: 2px solid rgba(215, 187, 131, 0.15);
   border-top-color: var(--gold);
+  border-right-color: rgba(215,187,131,0.4);
   border-radius: 50%;
   margin: 0 auto;
-  animation: spin 0.85s linear infinite;
+  animation: spin 1s linear infinite;
 }
+
+/* Powered by */
+.loading-powered {
+  margin-top: 32px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 9px;
+  letter-spacing: 0.2em;
+  color: rgba(215, 187, 131, 0.3);
+  text-transform: uppercase;
+}
+
 
 /* ============================================================
    COVER SECTION
