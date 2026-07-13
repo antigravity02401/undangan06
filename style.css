@@ -1417,7 +1417,7 @@ button {
 
 .s7-card-bottom {
   position: relative;
-  padding: 0 30px 40px;
+  padding: 40px 30px 40px;
   text-align: center;
   z-index: 3;
 }
@@ -1427,7 +1427,7 @@ button {
   font-size: 45px;
   color: var(--gold2);
   margin-bottom: 25px;
-  margin-top: -30px;
+  margin-top: 0;
 }
 
 .s7-quote-text {
