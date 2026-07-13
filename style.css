@@ -1607,6 +1607,7 @@ button {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  margin-top: 30vh;
 }
 
 .s8-text {
