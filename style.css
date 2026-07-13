@@ -1513,36 +1513,59 @@ button {
   margin-bottom: 30px;
 }
 
-.s-gift-btn {
-  display: inline-flex;
+.s-gift-bank-card {
+  position: relative;
+  width: 100%;
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: left;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.s-gift-bank-logo {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  height: 25px;
+  object-fit: contain;
+}
+
+.s-gift-bank-details p {
+  font-family: var(--font-ui);
+  font-size: 11px;
+  color: #333;
+  margin-bottom: 6px;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.s-gift-bank-details strong {
+  font-weight: 800;
+  font-size: 11px;
+}
+
+.s-gift-copy-btn {
+  display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
-  background: linear-gradient(to right, #C2A36B, #9E8046);
+  gap: 8px;
+  width: 100%;
+  background-color: #D6BD8A;
   color: #fff;
   border: none;
-  padding: 12px 30px;
-  border-radius: 30px;
-  font-family: var(--font-ui);
-  font-size: 13px;
-  font-weight: 700;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-  cursor: pointer;
-  transition: transform 0.2s, background-color 0.2s;
-}
-
-.s-gift-btn:active {
-  transform: scale(0.95);
-}
-
-.s-gift-thanks {
+  border-radius: 8px;
+  padding: 10px 0;
+  margin-top: 20px;
   font-family: var(--font-ui);
   font-size: 11px;
   font-weight: 700;
-  letter-spacing: 1px;
-  color: #222;
-  margin-top: 50px;
-  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.s-gift-copy-btn:active {
+  background-color: #C2A872;
 }
 
 

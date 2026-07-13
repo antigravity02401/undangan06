@@ -142,3 +142,16 @@ function initVideoOverlay() {
   update();
   setInterval(update, 1000);
 })();
+
+/* --- Copy Rekening --- */
+function copyRekening(rekNumber, btn) {
+  navigator.clipboard.writeText(rekNumber).then(() => {
+    const originalText = btn.innerHTML;
+    btn.innerHTML = '<i class="fas fa-check"></i> Tersalin!';
+    setTimeout(() => {
+      btn.innerHTML = originalText;
+    }, 2000);
+  }).catch(err => {
+    console.error('Failed to copy text: ', err);
+  });
+}
