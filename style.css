@@ -810,6 +810,15 @@ button {
   object-fit: contain;
 }
 
+.s2-house-bg {
+  width: 100%;
+  max-width: 480px;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 10px;
+  z-index: 1;
+}
+
 .s2-flower-bl {
   left: -10px;
   width: 35%;
